@@ -1,0 +1,124 @@
+
+        <style type="text/css"> 
+            BODY{ 
+                   font-family: verdana;
+                   font-size: 18 
+            } 
+            </style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="{{ url_for('static', filename=static/script.js)}}"></script>
+
+
+
+
+
+<script>
+var foodList = [];
+
+$(function(){
+    $(document).on('click','input[type=submit]',function(){
+        $('#foods').append('<div><a href="#" class="item">X</a> ' + $('#addFood').val() + '</div>');
+    });
+    $(document).on('click','input[type=submit]',function(){
+        $('#foods').append('<div><a href="#" class="item">X</a> ' + $('#addFood2').val() + '</div>');
+    });
+    $(document).on('click','.item',function(){
+        $(this).parent().remove();
+    });
+});
+</script>
+
+<p><b>Build Model Layers</b></p>
+
+<!-- we add to our foodList from the value of the following input -->    
+<input type="text" value="Tipo de Camada" id="addFood" size="25"/><br>
+<input type="text" value="Numero de Neuronios" id="addFood2" size="25"/><br>
+
+<b>Layer Type:</b>
+<select id="addFood">
+    <option id="addFood" value="Dense" selected>Dense</option>
+    <option id="addFood" value="Activation">Activation</option>
+    <option id="addFood" value="Flatten">Flatten</option>
+</select><br>
+<b>Neurons Number:</b>
+<select id="addFood">
+    <option id="addFood" value="12" selected>12</option>
+    <option id="addFood" value="24">24</option>
+    <option id="addFood" value="32">32</option>
+    <option id="addFood" value="64">64</option>
+    <option id="addFood" value="128">128</option>
+    <option id="addFood" value="256">256</option>
+    <option id="addFood" value="512">512</option>
+</select><br>
+<label for=""><b>Activation</b></label><br>
+Softmax: <input id="addFood" type="radio" name="opcao" value="softmax">
+Elu: <input id="addFood" type="radio" name="opcao" value="elu">
+Selu: <input id="addFood" type="radio" name="opcao" value="selu"><br>
+Softplus: <input id="addFood" type="radio" name="opcao" value="softplus">
+Softsign: <input id="addFood" type="radio" name="opcao" value="softsign">
+Relu: <input id="addFood" type="radio" name="opcao" value="relu"><br>
+Tanh: <input id="addFood" type="radio" name="opcao" value="tanh">
+Sigmoid: <input id="addFood" type="radio" name="opcao" value="sigmoid">
+Hard Sigmoid: <input id="addFood" type="radio" name="opcao" value="hard_sigmoid">
+Linear: <input id="addFood" type="radio" name="opcao" value="linear"></p>
+
+
+
+
+<!-- we call addToFood(); through the following button  -->    
+<input type="submit" value="Add Layer" onClick="addToFood();"><br>
+<input value="Ex. Dense(32, 'relu')" width=350px/>
+
+
+<!-- The list of food is displayed in the following div -->    
+<div id="foods"></div>
+</sc
+
+
+<form action="/results.html" method="post">
+
+    <p
+    <label for=""><b>Losses Function</b></label><br>
+    Mean Squared Error<INPUT TYPE="checkbox" NAME="OPCAO" VALUE="mean_squared_error"><br>
+    Mean Absolute Error<INPUT TYPE="checkbox" NAME="OPCAO" VALUE="mean_absolute_error"><br>
+    Mean Absolute Percentage Error <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="mean_absolute_percentage_error"><br>
+    Mean Squared Logarithmid Error <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="mean_squared_logarithmic_error"><br>
+    Squared Hinge <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="squared_hinge"><br>
+    Hinge <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="hinge"><br>
+    Categorical Hinge <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="categorical_hinge"><br>
+    Logcosh <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="logcosh"></p>
+    
+
+
+    <b>Metrics:</b>
+    <select>
+    <label for=""><b>Metrics</b></label><br>
+        <option value="binary_accuracy">Binary Accuracy</option>
+        <option value="categorical_accuracy">Categorical Accuracy</option>
+        <option value="sparse_categorical_accuracy">Sparse Categorical Accuracy</option>
+        <option value="top_k_categorical_accuracy" selected>Top k Categorical Accuracy</option>
+        <option value="sparse_top_k_categorical_accuracy">Sparse Top KCategorical Accuracy</option>
+    </select><br>
+    <p></p>
+
+
+
+        
+
+</head>
+
+
+
+
+
+
+
+
+
+
+    <input type="submit" value="Submit">
+  </form>

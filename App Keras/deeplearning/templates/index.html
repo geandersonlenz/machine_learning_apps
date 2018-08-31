@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/multi-select.css')}}">
+    <link href="{{url_for('.static', filename='css/style_sliders.css')}}" rel="stylesheet">
+    <link href="{{ url_for('.static', filename='css/multi-select.css')}}" rel="stylesheet">
+    <link href="{{url_for('.static', filename='css/style.css')}}" rel="stylesheet">
+
+</head>
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="{{ url_for('resumo') }}" method="POST">
+                    
+                    <h4>Select valor X:</h4>
+                    <select name="my-select" id="my-select" multiple="multiple">
+                        {%for x in colunas %}
+                        <option value="{{ x }}">{{ x }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <hr>
+                    <h4>Select valor Y:</h4>
+                    <select name="my-select3" id="my-select3" class="form-control">
+                        {%for x in colunas %}
+                        <option value="{{ x }}">{{ x }}</option>
+                        {% endfor %}
+                    </select>
+
+            </div>
+            
+            <div class="col-md-4">
+                    
+                    <select id="addFood" name="addFood" class="form-control">
+                        <option id="addFood" value="Dense" selected>Dense</option>
+                        <option id="addFood" value="Activation">Activation</option>
+                        <option id="addFood" value="Flatten">Flatten</option>
+                    </select>
+
+                    <select id="addFood2" name="addFood2" class="form-control">
+                        <option id="addFood2" value="12" selected>12</option>
+                        <option id="addFood2" value="24">24</option>
+                        <option id="addFood2" value="32">32</option>
+                        <option id="addFood2" value="64">64</option>
+                        <option id="addFood2" value="128">128</option>
+                        <option id="addFood2" value="256">256</option>
+                        <option id="addFood2" value="512">512</option>
+                    </select>
+
+                    <div class="range range-success">
+                        <input  type="range" name="range" min="12" max="512" value="256" onchange="rangeSuccess.value=value" name="range">
+                        <output id="rangeSuccess">50</output><br>
+                    </div>
+
+                    <select id="addFood3" name="addFood3" font-size="18" class="form-control">
+                            <option id="addFood3" value="softmax" selected>Softmax</option>
+                            <option id="addFood3" value="elu">Elu</option>
+                            <option id="addFood3" value="selu">Selu</option>
+                            <option id="addFood3" value="softplus">Softplus</option>
+                            <option id="addFood3" value="softsign">Softsign</option>
+                            <option id="addFood3" value="relu">Relu</option>
+                            <option id="addFood3" value="tanh">Tanh</option>
+                            <option id="addFood3" value="sigmoid">Sigmoid</option>
+                            <option id="addFood3" value="hard_sigmoid">Hard Sigmoid</option>
+                            <option id="addFood3" value="linear">Linear</option>
+                    </select>
+                        <div style="text-align: right">
+                            
+                            
+                        </div>
+                    
+                    <input type="text" name="resultado" id="resultado" style="display: none">
+                    
+                    
+                    <div id="foods"></div>
+                    <hr>
+                    <!-- segunda parte     -->
+                    <label for="select2">Losses Function</label>
+                    <select name="select2" id="select2" class="form-control">
+                        <option value="Mean Squared Error">Mean Squared Error</option>
+                        <option value="Mean Absolute Error">Mean Absolute Error</option>
+                        <option value="Mean Absolute Percentage Error">Mean Absolute Percentage Error</option>
+                        <option value="Mean Squared Logarithmid Error">Mean Squared Logarithmid Error</option>
+                        <option value="Squared Hinge">Squared Hinge</option>
+                        <option value="Hinge">Hinge</option>
+                        <option value="Categorical Hinge">Categorical Hinge</option>
+                        <option value="Logcosh">Logcosh</option>
+                    </select>
+                    <hr>
+                    <label for="select3">Custom Radios</label>
+                    <select name="select3" id="select3" class="form-control">
+                        <option value="option1">Option1</option>
+                        <option value="option2">Option2</option>
+                        <option value="option3">Option3</option>
+                        <option value="option4">Option4</option>
+                    </select>
+
+                    <hr>
+                    <label for="select4">Radios Toggles</label>
+                    <select name="select4" id="select4" class="form-control">
+                        <option value="option1">Option1</option>
+                        <option value="option2">Option2</option>
+                        <option value="option3">Option3</option>
+                        <option value="option4">Option4</option>
+                    </select>
+                    
+                    <hr>
+                    
+                    <label>Epochs</label>
+                    <input type="number" name="epochs" value="128" class="form-control">
+
+                    <hr>
+
+                    <label>Batch Size</label>
+                    <input type="number" name="batch_size" value="56" class="form-control">
+
+                    <hr>
+
+                    <div>
+                        <input type="submit" value="processar" class="btn btn-default">
+                    </div>
+
+
+                    </form>
+                </div>
+        
+            <div class="col-md-4">
+                <!-- conteudo direita -->
+                <button id="add_camada" class="btn btn-default">add camada</button>
+            </div>
+        </div>
+        
+
+       
+        
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('.static', filename='js/jquery.multi-select.js')}}" type="text/javascript"></script>
+    <script>
+        $('#my-select').multiSelect();
+        // $('#select2').multiSelect();
+        // $('#select3').multiSelect();
+    </script>
+    <script>
+        var foodList = [];
+        $('#add_camada').click(function(){
+            $('#foods').append('<div><a href="#" id="1" class="item">X</a> ' + $('#addFood').val() + '</div>');            
+            $('#foods').append('<div><a href="#" class="item">X</a> ' + $('#addFood2').val() + '</div>');
+            $('#foods').append('<div><a href="#" class="item">X</a> ' + $('#addFood3').val() + '</div>');
+            $('#foods').append('<div><a href="#" class="item">X</a> ' + $('#rangeSuccess').val() + '</div>');
+            var valor_addFood = $('#addFood').val();
+            var valor_addFood2 = $('#addFood2').val();
+            var valor_addFood3 = $('#addFood3').val();
+            var valor_rangeSuccess = $('#rangeSuccess').val();
+            //console.log(valor_addFood);
+
+            foodList.push(valor_addFood, valor_addFood2, valor_addFood3, valor_rangeSuccess);
+            //console.log(foodList);
+
+            var json_string = JSON.stringify(foodList);
+            console.log(json_string);
+
+            document.getElementById("resultado").innerHTML = json_string;
+            $('#resultado').val(json_string);    
+
+        });
+    </script>
+    <script>
+        
+    </script>
+    
+</body>
+</html>

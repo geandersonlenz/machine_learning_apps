@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+    <br>
+    <div class="container">
+        
+        <h5> <strong>Valor X:</strong>   {{ valor_x }}</h5>
+        <br>
+
+        <h5> <strong>Valor Y:</strong>   {{ valor_y }}</h5>
+        <br>
+
+        <h5> <strong>Camadas:</strong> {{ camadas }}</h5>
+        <br>
+
+        <h5> <strong>Losses Function:</strong> {{ losses_function }}</h5>
+        <br>
+
+        <h5> <strong>Customs Radios:</strong> {{ custom_radios }}</h5>
+        <br>
+        
+        <h5> <strong>Radios Toggles:</strong> {{ radios_toggles }}</h5>
+        <br>
+
+        <h5> <strong>Epochs:</strong> {{ epochs }}</h5>
+        <br>
+
+        <h5> <strong>Batch Size:</strong> {{ batch_size }}</h5>
+        <br>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in RDICT.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+    
+</body>
+</html>

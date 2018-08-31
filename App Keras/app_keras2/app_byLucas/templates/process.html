@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style_sliders.css')}}">
+</head>
+<style type="text/css">
+	body {
+		padding-top: 10px;
+	}
+</style>
+<body>
+<div class="container">
+	<form action="{{ url_for('resultado') }}" method="POST">
+	<div class="form-group">
+    	<label for="exampleFormControlSelect1">Layer Types</label>
+	    <select class="form-control" id="layertypes" name="layertypes">
+	    	{% for x in layer_types %}
+	      <option value="{{ x }}">{{ x }}</option>
+	    	{% endfor %}
+	    </select>
+  	</div>
+
+  	<div class="form-group">
+    	<label for="exampleFormControlSelect1">Neurons Number</label>
+	    <select class="form-control" id="neuronsnumber" name="neuronsnumber">
+	    	{% for x in neurons_number %}
+	      <option value="{{ x | int }}">{{ x | int }}</option>
+	    	{% endfor %}
+	    </select>
+  	</div>
+
+  	<div class="form-group">
+    	<label for="exampleFormControlSelect1">Activations</label>
+	    <select class="form-control" id="activations" name="activations">
+	    	{% for x in activations %}
+	      <option value="{{ x }}">{{ x }}</option>
+	    	{% endfor %}
+	    </select>
+  	</div>
+
+  	<div class="range range-success">
+    	<input id="inputrange" type="range" name="range" min="{{ min_optimizer }}" max="{{ max_optimizer }}" value="256" onchange="rangeSuccess.value=value">
+		<output id="rangeSuccess">50</output>
+		<br>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+    <hr>
+    Selecionado:
+    <div id='lista'> </div>
+
+</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		var str = "";
+
+		$("select").change(function(){
+			var str = "";
+			$( "select option:selected" ).each(function(){
+				str += $(this).text() + " ";
+			});
+
+			$("#lista").text(str);
+
+		})
+
+	</script>
+</body>
+</html>

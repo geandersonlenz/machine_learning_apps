@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="{{url_for('.static', filename='css/style_sliders.css')}}" rel="stylesheet">
+    <link href="{{url_for('.static', filename='css/style_checkbox.css')}}" rel="stylesheet">
+  
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px auto 400px;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align: center;"><span style="color: #000080;"><strong>Deep Learning Models</strong></span></h1>
+
+<p>Use this web app <em>to make hands on</em> deep learning models
+from your best perspective.</p>
+
+
+</body>
+</html>
+
+
+<div class="grid-container">
+<div class="row">
+    <div class="col">
+    1 of 3
+    </div>
+    <div class="grid-container">
+    <script src="{{ url_for('.static', filename='js/add_layer.js') }}"></script>
+
+    <b>Layer Type:</b>
+        <select id="addFood">
+        <option id="addFood" value="Dense" selected>Dense</option>
+        <option id="addFood" value="Activation">Activation</option>
+        <option id="addFood" value="Flatten">Flatten</option>
+        </select><br>
+    <br>
+    <b>Neurons Number:</b>
+    <select id="addFood2">
+        <option id="addFood2" value="12" selected>12</option>
+        <option id="addFood2" value="24">24</option>
+        <option id="addFood2" value="32">32</option>
+        <option id="addFood2" value="64">64</option>
+        <option id="addFood2" value="128">128</option>
+        <option id="addFood2" value="256">256</option>
+        <option id="addFood2" value="512">512</option>
+        </select><br>
+                      
+    <div class="range range-success">
+    <input  type="range" name="range" min="12" max="512" value="256" onchange="rangeSuccess.value=value">
+    <output id="rangeSuccess">50</output><br>
+    </div><br>
+
+    <b>Activations:</b>
+        <select id="addFood3" font-size="18">
+        <option id="addFood3" value="softmax" selected>Softmax</option>
+        <option id="addFood3" value="elu">Elu</option>
+        <option id="addFood3" value="selu">Selu</option>
+        <option id="addFood3" value="softplus">Softplus</option>
+        <option id="addFood3" value="softsign">Softsign</option>
+        <option id="addFood3" value="relu">Relu</option>
+        <option id="addFood3" value="tanh">Tanh</option>
+        <option id="addFood3" value="sigmoid">Sigmoid</option>
+        <option id="addFood3" value="hard_sigmoid">Hard Sigmoid</option>
+        <option id="addFood3" value="linear">Linear</option>
+        </select><br>
+    <br>
+                  
+    <!-- we call addToFood(); through the following button  -->
+    <input type="submit" value="add Camada"><br>
+    <!-- The list of food is displayed in the following div -->
+    <div id="foods"></div>
+                  
+            </div>
+            <div class="col">
+            3 of 3
+            </div>
+        </div>
+        </div>
+    

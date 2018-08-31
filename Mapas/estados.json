@@ -1,0 +1,32 @@
+{
+    "UF": [
+        {"Acre": 1}
+        { "Alagoas" : 3}
+        { "Amapá" : 2}
+        { "Amazonas" : 7}
+        { "Bahia" : 13}
+        { "Ceará" : 11}
+        { "Distrito Federal" : 21}
+        { "Espírito Santo" : 17}
+        { "Goiás" : 13}
+        { "Maranhão" : 9}
+        { "Mato Grosso" : 11}
+        { "Mato Grosso do Sul" : 8}
+        { "Minas Gerais" : 33}
+        { "Pará" : 12}
+        { "Paraíba" : 10}
+        { "Paraná" : 29}
+        { "Pernambuco" : 19}
+        { "Piauí" : 14}
+        { "Rio de Janeiro" : 22}
+        { "Rio Grande do Norte" : 15}
+        { "Rio Grande do Sul" : 37}
+        { "Rondônia" : 11}
+        { "Roraima" : 9}
+        { "Santa Catarina" : 30}
+        { "São Paulo" : 42}
+        { "Sergipe" : 5}
+        { "Tocantins" : 2}
+
+    ]
+}

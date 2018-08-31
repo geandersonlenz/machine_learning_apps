@@ -1,0 +1,28 @@
+body{
+    font-family: verdana;
+    font-size: 18;
+    line-height: 20px
+}
+.container{
+    width: 1440px;
+}
+p { 
+    box-shadow: grey 0.5em 0.5em 0.5em;
+    
+}
+.col-xs-6 {
+    box-shadow: black 0.5em 0.5em 0.5em;
+    font-size: 12
+}
+#colunas {
+    font-size: 18px; 
+    padding-top: 1%;
+}
+#my-select {
+    /* width: 35%; */
+    /* height: 300px; */
+    font-size: 18px;
+}
+.col-md-4 {
+    
+}

@@ -1,0 +1,32 @@
+<style>
+    textarea {
+    width: 100%;
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    }
+  </style>
+  <form method="POST">
+    <textarea name="text7"></textarea>
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  <form method="POST">
+    <input name="myFile" type="file">
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  <!-- The second value will be selected initially -->
+  <select name="text"> <!--Supplement an id here instead of using 'text'-->
+    <option value="Summarize">Summarize</option>
+    <option value="Generate" selected>Generate Text</option>
+    <option value="Topic Modelling">Topico Modelling</option>
+  </select>
+  <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="range" name="b" value="50" /> +
+    <input type="number" name="a" value="10" /> =
+    <output name="result">60</output>
+  </form>
