@@ -228,7 +228,7 @@ typing==3.6.2
 uiautomator==0.3.2
 ujson==1.35
 unicodecsv==0.14.1
-urllib3==1.22
+urllib3==1.26.5
 urlopen==1.0.0
 vdf==2.3
 virtualenv==15.2.0
